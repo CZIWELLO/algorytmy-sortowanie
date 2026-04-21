@@ -42,3 +42,22 @@ void zamien(int& a, int& b) {
     a = b;
     b = temp;
 }
+
+template <typename T>
+void zamien(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
+template <typename T>
+bool sprawdzCzyPosortowana(T *tab, size_t n) {
+    if (n <= 1) return true;
+    
+    for (size_t i = 0; i < n - 1; i++) {
+        if (tab[i] > tab[i + 1]) {
+            return false;
+        }
+    }
+    return true;
+}
